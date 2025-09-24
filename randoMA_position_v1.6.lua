@@ -13,10 +13,9 @@
    ██║ ╚═╝ ██║██║  ██║╚██████╔╝██║     ███████╗███████╗██║██║ ╚████║╚██████╔╝
    ╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚══════╝╚══════╝╚═╝╚═╝  ╚═══╝ ╚═════╝ 
 
-   
+
 --]]
 
-             
 local pluginName = select(1, ...)
 local componentName = select(2, ...)
 local signalTable = select(3, ...)
@@ -25,26 +24,21 @@ local myHandle = select(4, ...)
 local panMAX = nil
 local panMIN = nil
 local tiltMIN = nil
-local tiltMAX = nil 
+local tiltMAX = nil
 
 
 
 function randommValues(panMAX , panMIN, tiltMAX, tiltMIN)
-  
+
   if panMAX < panMIN then 
     panMIN , panMAX = panMAX, panMIN
-
     end
-
   if tiltMAX < tiltMIN then 
     tiltMIN , tiltMAX = tiltMAX, tiltMIN
   end
-
   local fixtures = SelectionCount()
   Printf("Fixtures Count  = %i" , fixtures)
- 
   if fixtures == 0 then MessageBox({title = "No Selection Active" , message = "Error: No fixtures selected. Operation aborted." , commands = {{value = 1 , name = "OK" }} , timeout = 2000 }) end
- 
     for  i = 1 , fixtures do 
       local numbersP = math.random(panMIN, panMAX)
       local numbersT = math.random(tiltMIN, tiltMAX)
@@ -52,47 +46,37 @@ function randommValues(panMAX , panMIN, tiltMAX, tiltMIN)
       Cmd("Attribute 'PAN' At " ..numbersP)
       Cmd("Attribute 'TILT' At " ..numbersT)
     end
-
     Cmd("Reset Selection MAtricks")
     end
-  
 
 
-      
-function CreateInputDialog(displayHandle)  
-    
--- Get the index of the display on which to create the dialog.
+function UI_MAIN(displayHandle)
+
 local displayIndex = Obj.Index(GetFocusDisplay())
 if displayIndex > 5 then
   displayIndex = 1
 end
 
--- Get the colors.
 local colorTransparent = Root().ColorTheme.ColorGroups.Global.Transparent
 local colorBackground = Root().ColorTheme.ColorGroups.Button.Background
 local colorBackgroundPlease = Root().ColorTheme.ColorGroups.Button.BackgroundPlease
 local colorPartlySelected = Root().ColorTheme.ColorGroups.Global.PartlySelected
 local colorPartlySelectedPreset = Root().ColorTheme.ColorGroups.Global.PartlySelectedPreset
 local saumonBackground = Root().ColorTheme.ColorGroups.Global.InvalidGridPosition
-
-
-
--- Get the overlay.
 local display = GetDisplayByIndex(displayIndex)
 local screenOverlay = display.ScreenOverlay
 
--- Delete any UI elements currently displayed on the overlay.
+
 screenOverlay:ClearUIChildren()
 
--- Create the dialog base.
 local dialogWidth = 800
 local baseInput = screenOverlay:Append("BaseInput")
-baseInput.Name = "RandoMA Positions "
+baseInput.Name = "RandoMA Positions"
 baseInput.H = "1080"
 baseInput.W = dialogWidth
 baseInput.MaxSize = string.format("%s,%s", display.W * 0.8, display.H)
 baseInput.MinSize = string.format("%s,0", dialogWidth - 100)
-baseInput.Columns = 1 
+baseInput.Columns = 1
 baseInput.Rows = 2
 baseInput[1][1].SizePolicy = "Fixed"
 baseInput[1][1].Size = "60"
@@ -103,9 +87,8 @@ baseInput.CloseOnEscape = "Yes"
 
 
 
--- Create the title bar.
 local titleBar = baseInput:Append("TitleBar")
-titleBar.Columns = 2  
+titleBar.Columns = 2
 titleBar.Rows = 1
 titleBar.Anchors = "0,0"
 titleBar[2][2].SizePolicy = "Fixed"
@@ -113,72 +96,63 @@ titleBar[2][2].Size = "50"
 titleBar.Texture = "corner2"
 
 local titleBarIcon = titleBar:Append("TitleButton")
-titleBarIcon.Text = "LumiArt Studio - RandoMA Position "    -- Title Of The Page 
+titleBarIcon.Text = "LumiArt Studio - RandoMA Position"
 titleBarIcon.Texture = "corner1"
 titleBarIcon.Anchors = "0,0"
-titleBarIcon.Icon = "ball3d"    -- Icon of the Page 
+titleBarIcon.Icon = "ball3d"
 
 local titleBarCloseButton = titleBar:Append("CloseButton")
 titleBarCloseButton.Anchors = "1,0"
 titleBarCloseButton.Texture = "corner2"
 
--- Create the dialog's main frame.
 local dlgFrame = baseInput:Append("DialogFrame")
 dlgFrame.H = "100%"
 dlgFrame.W = "100%"
 dlgFrame.Columns = 1
 dlgFrame.Rows = 10
-dlgFrame.Anchors = {
-  left = 0,
-  right = 0,
-  top = 1,
-  bottom = 1
-}
-dlgFrame[1][1].SizePolicy = "Fixed"  -- Title
+dlgFrame.Anchors = {left = 0, right = 0, top = 1, bottom = 1};
+
+
+dlgFrame[1][1].SizePolicy = "Fixed"
 dlgFrame[1][1].Size = "120"
 
 
-dlgFrame[1][2].SizePolicy = "Fixed"  -- First Btton (Take Selection) 
+dlgFrame[1][2].SizePolicy = "Fixed"
 dlgFrame[1][2].Size = "60"
 
 
-dlgFrame[1][3].SizePolicy = "Fixed"  -- Second Bttn (Blocked) 
+dlgFrame[1][3].SizePolicy = "Fixed"
 dlgFrame[1][3].Size = "60"
 
 
-dlgFrame[1][4].SizePolicy = "Fixed"  -- Third Bttn (Open)
-dlgFrame[1][4].Size = "50" 
+dlgFrame[1][4].SizePolicy = "Fixed"
+dlgFrame[1][4].Size = "50"
 
 
-dlgFrame[1][5].SizePolicy = "Fixed"  -- Four Bttn 
+dlgFrame[1][5].SizePolicy = "Fixed"
 dlgFrame[1][5].Size = "60"
 
 
-dlgFrame[1][6].SizePolicy = "Fixed"  -- Text (Pan Values Max ) 
+dlgFrame[1][6].SizePolicy = "Fixed"
 dlgFrame[1][6].Size = "350"
 
 
-dlgFrame[1][7].SizePolicy = "Fixed"  -- Button Apply Randomm  
+dlgFrame[1][7].SizePolicy = "Fixed"
 dlgFrame[1][7].Size = "30"
 
-dlgFrame[1][8].SizePolicy = "Fixed"  -- Line separation 
+dlgFrame[1][8].SizePolicy = "Fixed"
 dlgFrame[1][8].Size = "40"
 
-dlgFrame[1][9].SizePolicy = "Fixed"  -- Line input text number values  
+dlgFrame[1][9].SizePolicy = "Fixed"
 dlgFrame[1][9].Size = "70"
 
-dlgFrame[1][10].SizePolicy = "Fixed"  -- Line Ok and Cancel buttons
+dlgFrame[1][10].SizePolicy = "Fixed"
 dlgFrame[1][10].Size = "50"
 
 
 
-
-
-
--- Create the sub title.
--- This is row 1 of the dlgFrame.
 local subTitle = dlgFrame:Append("UIObject")
-subTitle.Text = "Radomize Positions \n This plugin creates random positions for any values (like pan/tilt). \n Open: fully random values, no limits. \n Blocked: sets min/max range to control the randomness.  "
+subTitle.Text = "Radomize Positions \n This plugin creates random positions for any values (like pan/tilt). \n Open: fully random values, no limits. \n Blocked: sets min/max range to control the randomness."
 subTitle.ContentDriven = "Yes"
 subTitle.ContentWidth = "No"
 subTitle.TextAutoAdjust = "No"
@@ -187,14 +161,10 @@ subTitle.Padding = {left = 20, right = 20, top = 15, bottom = 15}
 subTitle.Font = "Medium20"
 subTitle.HasHover = "No"
 subTitle.BackColor = saumonBackground
-subTitle.TextColor = red  
+subTitle.TextColor = red
 
 
 
-
-
---Create the button grid.
--- This is row 4 of the dlgFrame.
 local openB = dlgFrame:Append("UILayoutGrid")
 openB.Columns = 1
 openB.Rows = 1
@@ -212,9 +182,6 @@ open.Clicked = "openButton"
 open.Texture = "corner15"
 
 
-
--- Create the button Grid 
--- This is row 2 of the dlgFrame  
 local blockedB = dlgFrame:Append("UILayoutGrid")
 blockedB.Columns = 1
 blockedB.Rows = 1
@@ -232,10 +199,6 @@ blocked.Clicked = "blockedButton"
 blocked.Texture = "corner15"
 
 
-
-
--- Create the Line Grid 
--- This is row 2 of the dlgFrame  
 local lineB = dlgFrame:Append("UILayoutGrid")
 lineB.Columns = 1
 lineB.Rows = 1
@@ -254,10 +217,6 @@ line.Clicked = "Clicked"
 line.Texture = "treeview_horizontal"
 
 
-
-
--- Create Title for PAN 
--- This is row 5 of the dlgFrame. 
 local panTitle = dlgFrame:Append("UIObject")
 panTitle.Text = " PAN Min and Max "
 panTitle.ContentDriven = "No"
@@ -269,12 +228,9 @@ panTitle.Margin = {left = 80, right = 470, top = 0, bottom = 0}
 panTitle.Font = "Medium20"
 panTitle.HasHover = "No"
 panTitle.Texture = ""
-panTitle.TextColor = saumonBackground  
+panTitle.TextColor = saumonBackground
 
 
-
- -- Create Title for TILT  
- -- This is row 5 of the dlgFrame. 
 local tiltTitle = dlgFrame:Append("UIObject")
 tiltTitle.Text = "TILT Min and Max "
 tiltTitle.ContentDriven = "Yes"
@@ -290,67 +246,57 @@ tiltTitle.TextColor =  saumonBackground
 
 
 
-
-
-
-    -- Create the fader grid.
-  -- This is row 5 of the dlgFrame.
 local faderGrid = dlgFrame:Append("UILayoutGrid")
 faderGrid.Columns = 4
 faderGrid.Rows = 1 
 faderGrid.Anchors = {left = 0, right = 0, top = 5, bottom = 5}
-faderGrid.Margin = {left = 20, right = 20, top = 15, bottom = 15} -- Pan MIN Fader 
-local fader1 = faderGrid:Append("UiFader")    
+faderGrid.Margin = {left = 20, right = 20, top = 15, bottom = 15}
+local fader1 = faderGrid:Append("UiFader")
 fader1.Anchors = {left = 0, right = 0, top = 0, bottom = 0 }
 fader1.Margin = {left = 20, right = 20, top = 0, bottom = 0}
 fader1.Text = "Pan 'MIN' "
 fader1.Changed = "panMinFaderChanged"
-fader1.PluginComponent = myHandle  
+fader1.PluginComponent = myHandle
 local myobject = ShowData().Masters.Playback[46]
 local myproperty = 'NormedValue'
 myobject[myproperty] = 50
 fader1.Target = myobject
 
 
--- Pan MAX Fader 
 local fader2 = faderGrid:Append("UiFader")
 fader2.Anchors = {left = 1, right = 1, top = 0, bottom = 0}
 fader2.Margin = {left = 0, right = 40, top = 0, bottom = 0}
 fader2.Text = "Pan 'MAX' "
 fader2.Changed = "panMaxFaderChanged"
-fader2.PluginComponent = myHandle  
+fader2.PluginComponent = myHandle
 local myobject = ShowData().Masters.Playback[47]
 local myproperty = 'NormedValue'
 myobject[myproperty] = 50
 fader2.Target = myobject
 
 
-
--- Tilt MIN Fader 
 local fader3 = faderGrid:Append("UiFader")
 fader3.Anchors = {left = 2, right = 2, top = 0, bottom = 0}
 fader3.Margin = {left = 40, right = 0, top = 0, bottom = 0}
 fader3.Text = "Tilt 'MIN' " 
-fader3.Changed = "tiltMinFaderChanged" 
-fader3.PluginComponent = myHandle 
+fader3.Changed = "tiltMinFaderChanged"
+fader3.PluginComponent = myHandle
 local myobject = ShowData().Masters.Playback[48]
 local myproperty = 'NormedValue'
 myobject[myproperty] = 50
 fader3.Target = myobject
 
 
--- Tilt MAX Fader 
 local fader4 = faderGrid:Append("UiFader")
 fader4.Anchors = {left = 3, right = 3, top = 0, bottom = 0}
 fader4.Margin = {left = 20, right = 20, top = 0, bottom = 0}
 fader4.Text = "Tilt 'MAX' " 
-fader4.Changed = "tiltMaxFaderChanged" 
+fader4.Changed = "tiltMaxFaderChanged"
 fader4.PluginComponent = myHandle
 local myobject = ShowData().Masters.Playback[49]
 local myproperty = 'NormedValue'
 myobject[myproperty] = 50
 fader4.Target = myobject
-
 
 
 
@@ -373,8 +319,6 @@ applyButton2.Font = "Medium20"
 
 
 
--- Create the Line2 Grid 
--- This is row 2 of the dlgFrame  
 local line2B = dlgFrame:Append("UILayoutGrid")
 line2B.Columns = 1
 line2B.Rows = 1
@@ -395,58 +339,49 @@ line2.Texture = "treeview_horizontal"
 
 
 
-
-
-
-  -- Create Input Grid 
-  -- This is rows 7 of the dlgFrame : 
-local input1Icon = dlgFrame:Append("UILayoutGrid")        
+local input1Icon = dlgFrame:Append("UILayoutGrid")
 input1Icon.Columns = 2
 input1Icon.Rows = 1
-input1Icon.Anchors = { left = 0, right = 0, top = 8, bottom = 8} 
+input1Icon.Anchors = { left = 0, right = 0, top = 8, bottom = 8}
 input1Icon.Margin = {left = 0, right = 0, top = 30, bottom = 0}
 
 
 
-
-
--- Icones Preset Number 
 local inputEdit = input1Icon:Append("Button")
 inputEdit.Icon = "object_datapool"
 inputEdit.Margin = {left = 320, right = 360, top = 0, bottom = 0}
 inputEdit.Text = ""
-inputEdit.HasHover = "No";   
-inputEdit.Padding = "5,5"                                        
-inputEdit.Texture = ""         
+inputEdit.HasHover = "No";
+inputEdit.Padding = "5,5"
+inputEdit.Texture = ""
 
 
 
--- Input Preset Number 
 local inputLineEdit = input1Icon:Append("LineEdit")  
 inputLineEdit.Margin = { left = 0 , right = 10, top = 0, bottom = 0}
 inputLineEdit.Anchors = {left = 1, right = 1, top = 0, bottom = 0}
-inputLineEdit.Prompt = "Preset 2.  "                
-inputLineEdit.TextAutoAdjust = "Yes"  
+inputLineEdit.Prompt = "Preset 2.  "
+inputLineEdit.TextAutoAdjust = "Yes"
 inputLineEdit.Filter = "0123456789"
 inputLineEdit.VkPluginName = "TextInputNumOnly"
 inputLineEdit.Content = ""
 inputLineEdit.MaxTextLength = 3
 inputLineEdit.HideFocusFrame = "Yes"
 inputLineEdit.PluginComponent = myHandle
-inputLineEdit.TextChanged = "OnInput1TextChanged" 
-inputLineEdit.Texture = "corner15" 
+inputLineEdit.TextChanged = "OnInput1TextChanged"
+inputLineEdit.Texture = "corner15"
 
 
--- Create Ok Buttons Grid 
--- This is Rows  7 of the dlgFrame. 
+
+
 local okButton = dlgFrame:Append("UILayoutGrid")
 okButton.Columns = 1 
 okButton.Rows = 1    
-okButton.Anchors = { left = 0, right = 0, top = 8, bottom = 8} 
+okButton.Anchors = { left = 0, right = 0, top = 8, bottom = 8}
 okButton.Margin = {left = 0, right = 0, top = 30, bottom = 0}
 
 
-local okB = okButton:Append("Button")                                                                                                               
+local okB = okButton:Append("Button")
 okB.Anchors = { left = 0, right = 0, top = 0, bottom = 0} 
 okB.Margin = { left = 160, right = 430, top = 0, bottom = 0}
 okB.Textshadow = 1;
@@ -457,21 +392,15 @@ okB.TextalignmentH = "Centre";
 okB.PluginComponent = myHandle
 okB.Clicked = "storePreset"
 okB.Texture = "corner15"
-    
-
-    
 
 
 
--- Create the button grid.
--- This is row 6 of the dlgFrame.
+
 local buttonGrid = dlgFrame:Append("UILayoutGrid")
 buttonGrid.Columns = 2
 buttonGrid.Rows = 1
 buttonGrid.Anchors = { left = 0, right = 0, top = 9, bottom = 9}
 buttonGrid.Margin = {left = 0, right = 0, top = 115, bottom = -115}
-
-
 
 
 
@@ -489,6 +418,7 @@ applyButton.Clicked = "ApplyButtonClicked";
 
 
 
+
 local cancelButton = buttonGrid:Append("Button");
 cancelButton.Anchors = {left = 1, right = 1, top = 0, bottom = 0};
 cancelButton.Textshadow = 1;
@@ -502,10 +432,6 @@ cancelButton.Clicked = "CancelButtonClicked";
 
 
 
-
-
-
--- Handlers.
   signalTable.CancelButtonClicked = function(caller)
     MessageBox({title = "Cancel - Abandonned" , message = "Random position generation was cancelled by the user." , commands = {{value = 1 , name = "OK" }} , timeout = 2000 })
     Obj.Delete(screenOverlay, Obj.Index(baseInput))
@@ -516,7 +442,7 @@ cancelButton.Clicked = "CancelButtonClicked";
 
   signalTable.ApplyButtonClicked = function(caller)
     Obj.Delete(screenOverlay, Obj.Index(baseInput))
-    Echo("Application 'RandoMA Positions'  Be Terminated with Sucefully" )    
+    Echo("Application 'RandoMA Positions'  Be Terminated with Sucefully" )
     Printf("Application 'RandoMA Positions' Be Terminated with Sucefully")
     Cmd("ClearAll")
   end
@@ -524,17 +450,17 @@ cancelButton.Clicked = "CancelButtonClicked";
 
 
 
-signalTable.OnInput1TextChanged = function(caller) 
+signalTable.OnInput1TextChanged = function(caller)
     numberPreset = caller.Content
 end
 
 
-signalTable.storePreset = function(caller)    
+signalTable.storePreset = function(caller)
   if numberPreset == nil or SelectionCount() == 0 then
     MessageBox({title = "Value Empty" , message = "Please enter a value before storing the preset." , commands = {{value = 1 , name = "OK" }} , timeout = 2000 })
-  
-  else  
-  Cmd("Store Preset 2."..numberPreset)    
+
+  else
+  Cmd("Store Preset 2."..numberPreset)
   MessageBox({title = "Value Empty" , message = "The preset 2." ..numberPreset.. " was stored succefully "  , commands = {{value = 1 , name = "OK" }} , timeout = 2000 })
 
   end
@@ -544,7 +470,7 @@ signalTable.openButton = function(caller)
   Cmd("Grid 'Linearize' 'Numerical'")
   randommValues(315, -315, 135, -135)
 end
-      
+
 
 signalTable.blockedButton = function(caller)
    Cmd("Attribute 'PAN' At default")
@@ -557,7 +483,7 @@ signalTable.blockedButton = function(caller)
       local floatValue = tonumber(raw)
       if not floatValue then return 0 end
       local mapped = (floatValue - 50) / 50 * 255
-      local mappedValues = math.floor(mapped + 0.5) -- arrondi à l'entier le plus proche  
+      local mappedValues = math.floor(mapped + 0.5)
       Cmd("Attribute 'TILT' At " ..mappedValues)
       tiltMaxValue = mappedValues
     end
@@ -567,7 +493,7 @@ signalTable.blockedButton = function(caller)
       local floatValue = tonumber(raw)
       if not floatValue then return 0 end
       local mapped = (floatValue - 50) / 50 * 255
-      local mappedValues = math.floor(mapped + 0.5) -- arrondi à l'entier le plus proche  
+      local mappedValues = math.floor(mapped + 0.5)
       Cmd("Attribute 'TILT' At " ..mappedValues)
       tiltMinValue = mappedValues
     end
@@ -575,11 +501,9 @@ signalTable.blockedButton = function(caller)
     signalTable.panMaxFaderChanged = function(panMax)
       local raw = tostring(panMax.Value):gsub("%%", ""):gsub(",", "."):match("%S+")
       local floatValue = tonumber(raw)
-      -- Vérification de la validité
       if not floatValue then return 0 end
-      -- Centre autour de 0 (50%)
       local mapped = (floatValue - 50) / 50 * 255
-      local mappedValues =  math.floor(mapped + 0.5)  -- arrondi à l'entier le plus proche 
+      local mappedValues =  math.floor(mapped + 0.5)
       Cmd("Attribute 'PAN' At " ..mappedValues)
       panMaxValue = mappedValues
     end
@@ -588,11 +512,9 @@ signalTable.blockedButton = function(caller)
     signalTable.panMinFaderChanged = function(panMin)
       local raw = tostring(panMin.Value):gsub("%%", ""):gsub(",", "."):match("%S+")
       local floatValue = tonumber(raw)
-      -- Vérification de la validité
       if not floatValue then return 0 end
-      -- Centre autour de 0 (50%)
       local mapped = (floatValue - 50) / 50 * 255
-      local mappedValues =  math.floor(mapped + 0.5)  -- arrondi à l'entier le plus proche 
+      local mappedValues =  math.floor(mapped + 0.5)
       Cmd("Attribute 'PAN' At " ..mappedValues)
       panMinValue = mappedValues
     end
@@ -604,5 +526,4 @@ signalTable.blockedButton = function(caller)
       end
     end
 
-    -- Run the plugin.
-    return CreateInputDialog
+    return UI_MAIN
