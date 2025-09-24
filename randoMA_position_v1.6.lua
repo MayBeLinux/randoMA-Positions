@@ -299,7 +299,6 @@ myobject[myproperty] = 50
 fader4.Target = myobject
 
 
-
 local applyB = dlgFrame:Append("UILayoutGrid")
 applyB.Columns = 1 
 applyB.Rows = 1
@@ -315,8 +314,6 @@ applyButton2.PluginComponent = myHandle
 applyButton2.TextalignmentH = "Centre"
 applyButton2.Texture = "corner15"
 applyButton2.Font = "Medium20"
-
-
 
 
 local line2B = dlgFrame:Append("UILayoutGrid")
@@ -335,8 +332,6 @@ line2.TextalignmentH = "Centre";
 line2.PluginComponent = myHandle;
 line2.Clicked = "Clicked"
 line2.Texture = "treeview_horizontal"
-
-
 
 
 local input1Icon = dlgFrame:Append("UILayoutGrid")
@@ -394,8 +389,6 @@ okB.Clicked = "storePreset"
 okB.Texture = "corner15"
 
 
-
-
 local buttonGrid = dlgFrame:Append("UILayoutGrid")
 buttonGrid.Columns = 2
 buttonGrid.Rows = 1
@@ -429,16 +422,10 @@ cancelButton.TextalignmentH = "Centre";
 cancelButton.PluginComponent = myHandle;
 cancelButton.Clicked = "CancelButtonClicked";
 
-
-
-
-  signalTable.CancelButtonClicked = function(caller)
+---------------------------------------------------------------------------------------SIGNAL TABLES------------------------------------------------------------------------------------
     MessageBox({title = "Cancel - Abandonned" , message = "Random position generation was cancelled by the user." , commands = {{value = 1 , name = "OK" }} , timeout = 2000 })
     Obj.Delete(screenOverlay, Obj.Index(baseInput))
   end
-
-
-
 
   signalTable.ApplyButtonClicked = function(caller)
     Obj.Delete(screenOverlay, Obj.Index(baseInput))
@@ -447,13 +434,9 @@ cancelButton.Clicked = "CancelButtonClicked";
     Cmd("ClearAll")
   end
 
-
-
-
 signalTable.OnInput1TextChanged = function(caller)
     numberPreset = caller.Content
 end
-
 
 signalTable.storePreset = function(caller)
   if numberPreset == nil or SelectionCount() == 0 then
@@ -471,12 +454,10 @@ signalTable.openButton = function(caller)
   randommValues(315, -315, 135, -135)
 end
 
-
 signalTable.blockedButton = function(caller)
    Cmd("Attribute 'PAN' At default")
    Cmd("Attribute 'TILT' At default")
    Cmd("Grid 'Linearize' 'Numerical'")
-
 
     signalTable.tiltMaxFaderChanged = function(tiltMax)
       local raw = tostring(tiltMax.Value):gsub("%%", ""):gsub(",", "."):match("%S+")
@@ -508,7 +489,6 @@ signalTable.blockedButton = function(caller)
       panMaxValue = mappedValues
     end
 
-
     signalTable.panMinFaderChanged = function(panMin)
       local raw = tostring(panMin.Value):gsub("%%", ""):gsub(",", "."):match("%S+")
       local floatValue = tonumber(raw)
@@ -518,7 +498,6 @@ signalTable.blockedButton = function(caller)
       Cmd("Attribute 'PAN' At " ..mappedValues)
       panMinValue = mappedValues
     end
-
 
         signalTable.applyRandom = function(applyRandomm)
           randommValues(panMinValue , panMaxValue , tiltMaxValue, tiltMinValue)
