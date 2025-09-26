@@ -49,7 +49,7 @@ Le plugin inclut aussi :
   - **Open** → positions totalement aléatoires.  
   - **Blocked** → ajustez PAN/TILT min et max via les faders.  
 - **Étape 4** : Cliquez sur **Apply** pour générer les positions.  
-- **Étape 5** : Enregistrez un preset si nécessaire, grâce au champ de texte puis au bouton _Store Preset__.
+- **Étape 5** : Enregistrez un preset si nécessaire, grâce au champ de texte puis au bouton __Store Preset__.
 
 ---
 
