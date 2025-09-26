@@ -362,8 +362,6 @@ inputLineEdit.TextChanged = "OnInput1TextChanged"
 inputLineEdit.Texture = "corner15"
 
 
-
-
 local okButton = dlgFrame:Append("UILayoutGrid")
 okButton.Columns = 1 
 okButton.Rows = 1    
@@ -391,8 +389,6 @@ buttonGrid.Anchors = { left = 0, right = 0, top = 9, bottom = 9}
 buttonGrid.Margin = {left = 0, right = 0, top = 115, bottom = -115}
 
 
-
-
 local applyButton = buttonGrid:Append("Button");
 applyButton.Anchors = {left = 0, right = 0, top = 0, bottom = 0};
 applyButton.Textshadow = 1;
@@ -402,8 +398,6 @@ applyButton.Font = "Medium20";
 applyButton.TextalignmentH = "Centre";
 applyButton.PluginComponent = myHandle;
 applyButton.Clicked = "ApplyButtonClicked";
-
-
 
 
 
