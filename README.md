@@ -66,17 +66,32 @@ The plugin also includes:
 
 | Interface | Example |
 |-----------|---------|
-| 🎨 Main UI | ![Screenshot UI](assets/randoMA_ui.png) |
-| 🌀 PAN/TILT Random | ![Screenshot Effect](assets/randoMA_2.png) |
+| 🎨 Main UI | ![Screenshot UI](assets/screenshot-ui.png) |
+| 🌀 PAN/TILT Random | ![Screenshot Effect](assets/screenshot-effect.png) |
 
 ---
 
-## 🗺️ Roadmap  
+## 📝 Step-by-Step Usage with Images  
 
-- [ ] Option to store multiple presets in sequence.  
-- [ ] Add a “Weighted Random” mode (value weighting).  
-- [ ] UI improvement (futuristic skins).  
-- [ ] Advanced multi-fixture integration (gobos, colors).  
+**Step 1 – Fader Tilt Max**  
+Pick the fixtures you want to randomize.  
+![Step 1](assets/randoMA_6.png.png)  
+
+**Step 2 – Fader Tilt Min**  
+Launch the plugin from the Plugins pool.  
+![Step 2](assets/randoMA_3.png)  
+
+**Step 3 – Fader Pan Max**  
+Pick between **Open** (fully random) or **Blocked** (min/max with faders).  
+![Step 3](assets/randoMA_4.png.png)  
+
+**Step 4 – Fader Pan Min**  
+Click **Apply** to generate new PAN/TILT positions.  
+![Step 4](assets/randoMA_5.png.png)  
+
+**Step 5 – Blocked section result**  
+Enter a name and press **Store Preset** to save your configuration.  
+![Step 5](assets/step5-store-preset.png)  
 
 ---
 
