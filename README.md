@@ -1,20 +1,20 @@
 # 🌌 Lumi Art Studio – RandoMA Positions v1.6
 
-[![Build](https://img.shields.io/badge/Status-Stable-green?logo=github)](https://github.com/ton-username/ton-repo)
+[![Build](https://img.shields.io/badge/Status-Stable-green?logo=github)](https://github.com/MayBeLinux/randoMA-Positions)
 [![License](https://img.shields.io/badge/License-MIT-purple)](LICENSE)
-[![Stars](https://img.shields.io/github/stars/ton-username/ton-repo?style=social)](https://github.com/ton-username/ton-repo/stargazers)
-[![Issues](https://img.shields.io/github/issues/ton-username/ton-repo?logo=github)](https://github.com/ton-username/ton-repo/issues)
+[![Stars](https://img.shields.io/github/stars/MayBeLinux/randoMA-Positions?style=social)](https://github.com/MayBeLinux/randoMA-Positions/stargazers)
+[![Issues](https://img.shields.io/github/issues/MayBeLinux/randoMA-Positions?logo=github)](https://github.com/MayBeLinux/randoMA-Positions/issues)
 
 ---
 
 ## 🔮 Description  
 
 **RandoMA Positions** est un plugin développé par **Lumi Art Studio** pour **GrandMA3**.  
-Il permet de générer rapidement des positions aléatoires (PAN / TILT) pour les projecteurs sélectionnés, afin de créer des effets dynamiques et imprévisibles dans vos shows.  
+Il permet de générer rapidement des positions aléatoires (PAN / TILT) pour les fixtures sélectionnés, afin de créer des positions asymétriques et imprévisibles.  
 
 Deux modes sont disponibles :  
 - **Open** → valeurs totalement aléatoires.  
-- **Blocked** → valeurs bornées avec faders de contrôle (min / max).  
+- **Blocked** → valeurs définies avec les faders de contrôle entre (min / max).  
 
 Le plugin inclut aussi :  
 - Stockage de presets personnalisés.  
@@ -34,7 +34,9 @@ Le plugin inclut aussi :
      ```  
 2. Depuis la console GrandMA3 ou onPC :  
    - Ouvrir la **fenêtre Plugins**.  
-   - Importer et assigner `RandoMA Positions`.  
+   - Cliquer droit pour ajouter un plugin dans le numéro de pools que vous souhaitez.
+   - Choisissez le path en haut a droite pour naviguer entre __Internal__ et __USB Stick__ (le nom de clés USB).
+   - Importer le plugin
    - Lancer le plugin.  
 
 ---
@@ -47,7 +49,7 @@ Le plugin inclut aussi :
   - **Open** → positions totalement aléatoires.  
   - **Blocked** → ajustez PAN/TILT min et max via les faders.  
 - **Étape 4** : Cliquez sur **Apply** pour générer les positions.  
-- **Étape 5** : Enregistrez un preset si nécessaire.  
+- **Étape 5** : Enregistrez un preset si nécessaire, grâce au champ de texte puis au bouton _Store Preset__.
 
 ---
 
