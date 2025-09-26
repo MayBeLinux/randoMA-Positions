@@ -64,6 +64,7 @@ local colorPartlySelected = Root().ColorTheme.ColorGroups.Global.PartlySelected
 local colorPartlySelectedPreset = Root().ColorTheme.ColorGroups.Global.PartlySelectedPreset
 local saumonBackground = Root().ColorTheme.ColorGroups.Global.InvalidGridPosition
 local display = GetDisplayByIndex(displayIndex)
+local red = Root().ColorTheme.ColorGroups.Global.RedIndicator
 local screenOverlay = display.ScreenOverlay
 
 
@@ -83,8 +84,6 @@ baseInput[1][1].Size = "60"
 baseInput[1][2].SizePolicy = "Stretch"
 baseInput.AutoClose = "No"
 baseInput.CloseOnEscape = "Yes"
-
-
 
 
 local titleBar = baseInput:Append("TitleBar")
@@ -150,7 +149,6 @@ dlgFrame[1][10].SizePolicy = "Fixed"
 dlgFrame[1][10].Size = "50"
 
 
-
 local subTitle = dlgFrame:Append("UIObject")
 subTitle.Text = "Radomize Positions \n This plugin creates random positions for any values (like pan/tilt). \n Open: fully random values, no limits. \n Blocked: sets min/max range to control the randomness."
 subTitle.ContentDriven = "Yes"
@@ -162,7 +160,6 @@ subTitle.Font = "Medium20"
 subTitle.HasHover = "No"
 subTitle.BackColor = saumonBackground
 subTitle.TextColor = red
-
 
 
 local openB = dlgFrame:Append("UILayoutGrid")
@@ -341,7 +338,6 @@ input1Icon.Anchors = { left = 0, right = 0, top = 8, bottom = 8}
 input1Icon.Margin = {left = 0, right = 0, top = 30, bottom = 0}
 
 
-
 local inputEdit = input1Icon:Append("Button")
 inputEdit.Icon = "object_datapool"
 inputEdit.Margin = {left = 320, right = 360, top = 0, bottom = 0}
@@ -349,7 +345,6 @@ inputEdit.Text = ""
 inputEdit.HasHover = "No";
 inputEdit.Padding = "5,5"
 inputEdit.Texture = ""
-
 
 
 local inputLineEdit = input1Icon:Append("LineEdit")  
@@ -423,6 +418,8 @@ cancelButton.PluginComponent = myHandle;
 cancelButton.Clicked = "CancelButtonClicked";
 
 ---------------------------------------------------------------------------------------SIGNAL TABLES------------------------------------------------------------------------------------
+
+    signalTable.CancelButtonClicked = function(caller)
     MessageBox({title = "Cancel - Abandonned" , message = "Random position generation was cancelled by the user." , commands = {{value = 1 , name = "OK" }} , timeout = 2000 })
     Obj.Delete(screenOverlay, Obj.Index(baseInput))
   end
