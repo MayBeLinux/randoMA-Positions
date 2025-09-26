@@ -21,10 +21,10 @@ local componentName = select(2, ...)
 local signalTable = select(3, ...)
 local myHandle = select(4, ...)
 
-local panMAX = nil
-local panMIN = nil
-local tiltMIN = nil
-local tiltMAX = nil
+local panMAX = 0
+local panMIN = 0
+local tiltMIN = 0
+local tiltMAX = 0
 
 
 
