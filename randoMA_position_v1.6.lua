@@ -1,17 +1,14 @@
  --[[
 
-- RANDOMA POSITIONS V1.5
+- RANDOMA POSITIONS V1.6
 - Developement by LumiArt - Studio
 - Create some randomm position in your show 
 
 
 
-   ███╗   ███╗ █████╗ ██╗   ██╗██████╗ ███████╗██╗     ██╗███╗   ██╗██╗   ██╗
-   ████╗ ████║██╔══██╗██║   ██║██╔══██╗██╔════╝██║     ██║████╗  ██║██║   ██║
-   ██╔████╔██║███████║██║   ██║██████╔╝█████╗  ██║     ██║██╔██╗ ██║██║   ██║
-   ██║╚██╔╝██║██╔══██║██║   ██║██╔═══╝ ██╔══╝  ██║     ██║██║╚██╗██║██║   ██║
-   ██║ ╚═╝ ██║██║  ██║╚██████╔╝██║     ███████╗███████╗██║██║ ╚████║╚██████╔╝
-   ╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚══════╝╚══════╝╚═╝╚═╝  ╚═══╝ ╚═════╝ 
+  ╔═══════════════════════════════════╗
+  ║           Lumi Art Studio          ║
+   ╚═══════════════════════════════════╝
 
 
 --]]
@@ -25,7 +22,6 @@ local panMAX = 0
 local panMIN = 0
 local tiltMIN = 0
 local tiltMAX = 0
-
 
 
 function randommValues(panMAX , panMIN, tiltMAX, tiltMIN)
@@ -242,7 +238,6 @@ tiltTitle.Texture = ""
 tiltTitle.TextColor =  saumonBackground
 
 
-
 local faderGrid = dlgFrame:Append("UILayoutGrid")
 faderGrid.Columns = 4
 faderGrid.Rows = 1 
@@ -398,7 +393,6 @@ applyButton.Font = "Medium20";
 applyButton.TextalignmentH = "Centre";
 applyButton.PluginComponent = myHandle;
 applyButton.Clicked = "ApplyButtonClicked";
-
 
 
 local cancelButton = buttonGrid:Append("Button");
