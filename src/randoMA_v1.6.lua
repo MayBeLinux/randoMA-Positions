@@ -7,7 +7,6 @@
   ║           Lumi Art Studio          ║
   ╚═══════════════════════════════════╝
 
-  
 --]]
 
 local pluginName = select(1, ...)
