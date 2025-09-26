@@ -9,47 +9,47 @@
 
 ## 🔮 Description  
 
-**RandoMA Positions** est un plugin développé par **Lumi Art Studio** pour **GrandMA3**.  
-Il permet de générer rapidement des positions aléatoires (PAN / TILT) pour les fixtures sélectionnés, afin de créer des positions asymétriques et imprévisibles.  
+**RandoMA Positions** is a plugin developed by **Lumi Art Studio** for **GrandMA3**.  
+It allows you to quickly generate random positions (PAN / TILT) for the selected fixtures, in order to create asymmetrical and unpredictable looks.  
 
-Deux modes sont disponibles :  
-- **Open** → valeurs totalement aléatoires.  
-- **Blocked** → valeurs définies avec les faders de contrôle entre (min / max).  
+Two modes are available:  
+- **Open** → completely random values.  
+- **Blocked** → values defined by control faders within a (min / max) range.  
 
-Le plugin inclut aussi :  
-- Stockage de presets personnalisés.  
-- Interface graphique dédiée (UI avec boutons, faders, zones de saisie).  
-- Sélection et application instantanée sur les fixtures choisies.  
+The plugin also includes:  
+- Storage of custom presets.  
+- A dedicated graphical interface (UI with buttons, faders, input fields).  
+- Instant selection and application on chosen fixtures.  
 
-✨ *Créez des shows vivants et organiques grâce au hasard contrôlé.*  
+✨ *Create lively, organic shows with controlled randomness.*  
 
 ---
 
 ## ⚙️ Installation  
 
-1. Copier le fichier `RandoMA_Positions.lua` dans votre dossier plugins GrandMA3.  
-   - Exemple :  
+1. Copy the file `RandoMA_Positions.lua` into your GrandMA3 plugins folder.  
+   - Example:  
      ```
      C:\ProgramData\MALightingTechnology\gma3_library\datapools\plugins
      ```  
-2. Depuis la console GrandMA3 ou onPC :  
-   - Ouvrir la **fenêtre Plugins**.  
-   - Cliquer droit pour ajouter un plugin dans le numéro de pools que vous souhaitez.
-   - Choisissez le path en haut a droite pour naviguer entre __Internal__ et __USB Stick__ (le nom de clés USB).
-   - Importer le plugin
-   - Lancer le plugin.  
+2. From the GrandMA3 console or onPC:  
+   - Open the **Plugins window**.  
+   - Right-click to add a plugin in the pool slot of your choice.  
+   - Use the path selector (top right) to switch between __Internal__ and __USB Stick__ (USB drive name).  
+   - Import the plugin.  
+   - Run the plugin.  
 
 ---
 
 ## 🚀 Usage  
 
-- **Étape 1** : Sélectionnez vos fixtures.  
-- **Étape 2** : Ouvrez le plugin via l’UI.  
-- **Étape 3** : Choisissez entre :  
-  - **Open** → positions totalement aléatoires.  
-  - **Blocked** → ajustez PAN/TILT min et max via les faders.  
-- **Étape 4** : Cliquez sur **Apply** pour générer les positions.  
-- **Étape 5** : Enregistrez un preset si nécessaire, grâce au champ de texte puis au bouton __Store Preset__.
+- **Step 1**: Select your fixtures.  
+- **Step 2**: Open the plugin via the UI.  
+- **Step 3**: Choose between:  
+  - **Open** → fully random positions.  
+  - **Blocked** → adjust PAN/TILT min and max using the faders.  
+- **Step 4**: Click **Apply** to generate the positions.  
+- **Step 5**: Save a preset if needed, using the text field and the __Store Preset__ button.  
 
 ---
 
@@ -64,31 +64,31 @@ Le plugin inclut aussi :
 
 ## 🖼️ Screenshots  
 
-| Interface | Exemple |
+| Interface | Example |
 |-----------|---------|
-| 🎨 UI Principale | ![Screenshot UI](https://via.placeholder.com/500x250.png?text=RandoMA+Positions+UI) |
-| 🌀 PAN/TILT Random | ![Screenshot Effect](https://via.placeholder.com/500x250.png?text=Random+PAN%2FTILT) |
+| 🎨 Main UI | ![Screenshot UI](assets/randoMA_ui.png) |
+| 🌀 PAN/TILT Random | ![Screenshot Effect](assets/randoMA_2.png) |
 
 ---
 
 ## 🗺️ Roadmap  
 
-- [ ] Option pour enregistrer plusieurs presets en série.  
-- [ ] Ajout d’un mode “Weighted Random” (pondération des valeurs).  
-- [ ] Amélioration de l’interface (skins futuristes).  
-- [ ] Intégration multi-fixtures plus avancée (gobos, couleurs).  
+- [ ] Option to store multiple presets in sequence.  
+- [ ] Add a “Weighted Random” mode (value weighting).  
+- [ ] UI improvement (futuristic skins).  
+- [ ] Advanced multi-fixture integration (gobos, colors).  
 
 ---
 
 ## 🤝 Contribution  
 
-Les contributions et suggestions sont les bienvenues.  
-Merci de créer une **issue** ou une **pull request** dans ce repo.  
+Contributions and suggestions are welcome.  
+Please open an **issue** or a **pull request** in this repository.  
 
 ---
 
 ## 📜 License  
 
-Distribué sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus d’informations.  
+Distributed under the MIT License. See the [LICENSE](LICENSE) file for more information.  
 
 ---
