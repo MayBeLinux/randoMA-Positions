@@ -1,4 +1,4 @@
-# 🌌 Lumi Art Studio – RandoMA Positions v1.6
+# Lumi Art Studio – RandoMA Positions v1.6
 
 [![Build](https://img.shields.io/badge/Status-Stable-green?logo=github)](https://github.com/MayBeLinux/randoMA-Positions)
 [![License](https://img.shields.io/badge/License-MIT-purple)](LICENSE)
