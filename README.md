@@ -49,7 +49,7 @@ The plugin also includes:
   - **Open** → fully random positions.  
   - **Blocked** → adjust PAN/TILT min and max using the faders.  
 - **Step 4**: Click **Apply** to generate the positions.  
-- **Step 5**: Save a preset if needed, using the text field and the __Store Preset__ button.  
+- **Step 5**: Save a preset if needed, using the text field and the __Store Preset__ button.
 
 ---
 
@@ -74,23 +74,23 @@ The plugin also includes:
 ## 📝 Step-by-Step Usage with Images  
 
 **Step 1 – Fader Tilt Max**  
-Pick the fixtures you want to randomize.  
+Change the Tilt Max fader range.
 ![Step 1](assets/randoMA_6.png)  
 
 **Step 2 – Fader Tilt Min**  
-Launch the plugin from the Plugins pool.  
+Change the Tilt Min fader range.
 ![Step 2](assets/randoMA_3.png)  
 
 **Step 3 – Fader Pan Max**  
-Pick between **Open** (fully random) or **Blocked** (min/max with faders).  
+Change the Pan Max fader range.  
 ![Step 3](assets/randoMA_4.png)  
 
 **Step 4 – Fader Pan Min**  
-Click **Apply** to generate new PAN/TILT positions.  
+Change the Pan Min fader range.
 ![Step 4](assets/randoMA_5.png)  
 
 **Step 5 – Blocked section result**  
-Enter a name and press **Store Preset** to save your configuration.  
+Click on apply, and store the position into a preset.  
 ![Step 5](assets/randoMA_1.png)  
 
 ---
