@@ -66,8 +66,8 @@ The plugin also includes:
 
 | Interface | Example |
 |-----------|---------|
-| 🎨 Main UI | ![Screenshot UI](assets/screenshot-ui.png) |
-| 🌀 PAN/TILT Random | ![Screenshot Effect](assets/screenshot-effect.png) |
+| 🎨 Main UI | ![Screenshot UI](assets/randoMA_ui.png) |
+| 🌀 PAN/TILT Random | ![Screenshot Effect](assets/randoMA_2.png) |
 
 ---
 
