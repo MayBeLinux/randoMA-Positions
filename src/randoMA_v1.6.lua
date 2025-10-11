@@ -105,7 +105,7 @@ dlgFrame.Anchors = {left = 0, right = 0, top = 1, bottom = 1};
 
 
 dlgFrame[1][1].SizePolicy = "Fixed"
-dlgFrame[1][1].Size = "120"
+dlgFrame[1][1].Size = "140"
 
 
 dlgFrame[1][2].SizePolicy = "Fixed"
@@ -140,9 +140,12 @@ dlgFrame[1][9].Size = "70"
 dlgFrame[1][10].SizePolicy = "Fixed"
 dlgFrame[1][10].Size = "50"
 
+--dlgFrame[1][11].SizePolicy = "Fixed"
+--dlgFrame[1][11].Size = "50"
+
 
 local subTitle = dlgFrame:Append("UIObject")
-subTitle.Text = "Radomize Positions \n This plugin creates random positions for any values (like pan/tilt). \n Open: fully random values, no limits. \n Blocked: sets min/max range to control the randomness."
+subTitle.Text = "~~~~~~~~~~ randoMA ~~~~~~~~~~\n ~~~~~~~~~~  ~~~~~~~~~~ \n Create random positions with your selection \n Open - Fully randoMA \n Blocked - Set an min and max value for Pan and Tilt"
 subTitle.ContentDriven = "Yes"
 subTitle.ContentWidth = "No"
 subTitle.TextAutoAdjust = "No"
@@ -150,6 +153,7 @@ subTitle.Anchors = {left = 0, right = 0, top = 0, bottom = 0}
 subTitle.Padding = {left = 20, right = 20, top = 15, bottom = 15}
 subTitle.Font = "Medium20"
 subTitle.HasHover = "No"
+subTitle.Texture = "corner15"
 subTitle.BackColor = saumonBackground
 subTitle.TextColor = red
 
@@ -377,7 +381,7 @@ local buttonGrid = dlgFrame:Append("UILayoutGrid")
 buttonGrid.Columns = 2
 buttonGrid.Rows = 1
 buttonGrid.Anchors = { left = 0, right = 0, top = 9, bottom = 9}
-buttonGrid.Margin = {left = 0, right = 0, top = 115, bottom = -115}
+buttonGrid.Margin = {left = 0, right = 0, top = 25, bottom = -25}
 
 
 local applyButton = buttonGrid:Append("Button");
