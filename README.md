@@ -62,7 +62,7 @@ The plugin also includes:
 
 ---
 
-## Logos
+## Logo
 
 ![randoMA_logo](assets/randoMA_lgo.png)
 
