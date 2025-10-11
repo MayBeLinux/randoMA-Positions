@@ -62,6 +62,11 @@ The plugin also includes:
 
 ---
 
+## Logos
+
+![randoMA_logo](assets/randoMA_lgo.png)
+
+
 ## 🖼️ Screenshots  
 
 | Interface | Example |
