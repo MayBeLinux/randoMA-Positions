@@ -53,7 +53,7 @@ local colorTransparent = Root().ColorTheme.ColorGroups.Global.Transparent
 local colorBackground = Root().ColorTheme.ColorGroups.Button.Background
 local colorBackgroundPlease = Root().ColorTheme.ColorGroups.Button.BackgroundPlease
 local colorPartlySelected = Root().ColorTheme.ColorGroups.Global.PartlySelected
-local colorPartlySelectedPreset = Root().ColorTheme.ColorGroups.Global.PartlySelectedPreset
+local colorPartlySelectedPreset = Root().ColorTheme.ColorGroups.Global.Shadow
 local saumonBackground = Root().ColorTheme.ColorGroups.Global.InvalidGridPosition
 local display = GetDisplayByIndex(displayIndex)
 local red = Root().ColorTheme.ColorGroups.Global.RedIndicator
@@ -140,8 +140,6 @@ dlgFrame[1][9].Size = "70"
 dlgFrame[1][10].SizePolicy = "Fixed"
 dlgFrame[1][10].Size = "50"
 
---dlgFrame[1][11].SizePolicy = "Fixed"
---dlgFrame[1][11].Size = "50"
 
 
 local subTitle = dlgFrame:Append("UIObject")
@@ -154,7 +152,7 @@ subTitle.Padding = {left = 20, right = 20, top = 15, bottom = 15}
 subTitle.Font = "Medium20"
 subTitle.HasHover = "No"
 subTitle.Texture = "corner15"
-subTitle.BackColor = saumonBackground
+subTitle.BackColor = colorPartlySelectedPreset
 subTitle.TextColor = red
 
 
