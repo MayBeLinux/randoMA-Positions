@@ -100,7 +100,7 @@ local dlgFrame = baseInput:Append("DialogFrame")
 dlgFrame.H = "100%"
 dlgFrame.W = "100%"
 dlgFrame.Columns = 1
-dlgFrame.Rows = 10
+dlgFrame.Rows = 10 -- Number of rows in the grid Main
 dlgFrame.Anchors = {left = 0, right = 0, top = 1, bottom = 1};
 
 
@@ -137,13 +137,14 @@ dlgFrame[1][8].Size = "40"
 dlgFrame[1][9].SizePolicy = "Fixed"
 dlgFrame[1][9].Size = "70"
 
-dlgFrame[1][10].SizePolicy = "Fixed"
+dlgFrame[1][10].SizePolicy = "Fixed"  -- Line Apply and Cancel buttons 
 dlgFrame[1][10].Size = "50"
 
 
 
+
 local subTitle = dlgFrame:Append("UIObject")
-subTitle.Text = "~~~~~~~~~~ randoMA ~~~~~~~~~~\n ~~~~~~~~~~  ~~~~~~~~~~ \n Create random positions with your selection \n Open - Fully randoMA \n Blocked - Set an min and max value for Pan and Tilt"
+subTitle.Text = "__________ randoMA __________\n __________  __________ \n Create random positions with your selection \n Open - Fully randoMA \n Blocked - Set an min and max value for Pan and Tilt"
 subTitle.ContentDriven = "Yes"
 subTitle.ContentWidth = "No"
 subTitle.TextAutoAdjust = "No"
@@ -379,7 +380,7 @@ local buttonGrid = dlgFrame:Append("UILayoutGrid")
 buttonGrid.Columns = 2
 buttonGrid.Rows = 1
 buttonGrid.Anchors = { left = 0, right = 0, top = 9, bottom = 9}
-buttonGrid.Margin = {left = 0, right = 0, top = 25, bottom = -25}
+buttonGrid.Margin = {left = 0, right = 0, top = 80, bottom = -95}
 
 
 local applyButton = buttonGrid:Append("Button");
