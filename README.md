@@ -20,9 +20,7 @@ The plugin also includes:
 - Storage of custom presets.  
 - A dedicated graphical interface (UI with buttons, faders, input fields).  
 - Instant selection and application on chosen fixtures.  
-
-✨ *Create lively, organic shows with controlled randomness.*  
-
+ 
 ---
 
 ## ⚙️ Installation  
