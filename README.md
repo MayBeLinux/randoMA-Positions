@@ -7,7 +7,7 @@
 
 ---
 
-## 🔮 Description  
+## What in this plugin good ? 
 
 **RandoMA Positions** is a plugin developed by **Lumi Art Studio** for **GrandMA3**.  
 It allows you to quickly generate random positions (PAN / TILT) for the selected fixtures, in order to create asymmetrical and unpredictable looks.  
