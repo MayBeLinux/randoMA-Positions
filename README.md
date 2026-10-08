@@ -51,15 +51,6 @@ The plugin also includes:
 
 ---
 
-## 🛰️ Badges  
-
-[![Randomize](https://img.shields.io/badge/🎲-Randomize-blue)](#)  
-[![Pan/Tilt](https://img.shields.io/badge/🌀-PAN%2FTILT-lightgrey)](#)  
-[![Preset](https://img.shields.io/badge/💾-Preset-orange)](#)  
-[![GrandMA3](https://img.shields.io/badge/🎚️-GrandMA3-yellow)](#)  
-
----
-
 ## Logo
 
 ![randoMA_logo](assets/randoMA_lgo.png)
