@@ -23,7 +23,7 @@ The plugin also includes:
  
 ---
 
-## ⚙️ Installation  
+## Installation  
 
 1. Copy the file `RandoMA_Positions.lua` into your GrandMA3 plugins folder.  
    - Example:  
@@ -39,7 +39,7 @@ The plugin also includes:
 
 ---
 
-## 🚀 Usage  
+## Usage  
 
 - **Step 1**: Select your fixtures.  
 - **Step 2**: Open the plugin via the UI.  
@@ -65,12 +65,12 @@ The plugin also includes:
 ![randoMA_logo](assets/randoMA_lgo.png)
 
 
-## 🖼️ Screenshots  
+## Screenshots  
 
 | Interface | Example |
 |-----------|---------|
-| 🎨 Main UI | ![Screenshot UI](assets/randoMA_ui.png) |
-| 🌀 PAN/TILT Random | ![Screenshot Effect](assets/randoMA_2.png) |
+| Main UI | ![Screenshot UI](assets/randoMA_ui.png) |
+| PAN/TILT Random | ![Screenshot Effect](assets/randoMA_2.png) |
 
 ---
 
@@ -98,15 +98,9 @@ Click on apply, and store the position into a preset.
 
 ---
 
-## 🤝 Contribution  
+## Contribution  
 
 Contributions and suggestions are welcome.  
-Please open an **issue** or a **pull request** in this repository.  
-
----
-
-## 📜 License  
-
-Distributed under the MIT License. See the [LICENSE](LICENSE) file for more information.  
+Please open an **issue** or a **pull request** in this repository.
 
 ---
